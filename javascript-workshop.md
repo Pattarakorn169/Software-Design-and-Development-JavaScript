@@ -174,16 +174,16 @@ let person = {
 </head>
 <body>
     <script>
-        let ID = "67030154";
-        let name = "พัชรพล";
-        const midtermscores = 60;
-        const finalscore = 35;
+        let ID = "67030169";
+        let name = "ภัทรกร";
+        const midtermscores = 55;
+        const finalscore = 40;
 
         let student ={
-            ID: 67030172,
-            name: "พัชรพล",
+            ID: 67030169,
+            name: "ภัทรกร",
             major:"เทคโนโลยีคอมพิวเตอร์",
-            grade: 1.98
+            grade: 2.29
             }
     
         console.log(ID); 
@@ -197,7 +197,8 @@ let person = {
 </html>]
 ```
 [รูปผลการทดลองที่ 2.1]
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/e4fb5dba-589d-4439-9fa0-62c83013e26c)
+
 
 
 ### 2.2 การดำเนินการทางคณิตศาสตร์
