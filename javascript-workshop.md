@@ -571,9 +571,78 @@ process(function() {
 
 ### บันทึกผลการทดลอง 2.4.1
 ```html
-[บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คำนวณ BMI และตรวจสอบรหัสผ่าน</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        input, button { margin: 5px; padding: 8px; }
+    </style>
+</head>
+<body>
+    <h2>คำนวณ BMI</h2>
+    น้ำหนัก (kg): <input type="number" id="weight" placeholder="ใส่น้ำหนัก">
+    ส่วนสูง (m): <input type="number" id="height" step="0.01" placeholder="ใส่ส่วนสูง">
+    <button onclick="calculateBMI()">คำนวณ</button>
+    <p id="bmiResult"></p>
+
+    <h2>ทักทายผู้ใช้</h2>
+    ชื่อ: <input type="text" id="name" placeholder="ใส่ชื่อ">
+    อายุ: <input type="number" id="age" placeholder="ใส่อายุ">
+    <button onclick="greetUser()">ทักทาย</button>
+    <p id="greeting"></p>
+
+    <h2>ตรวจสอบรหัสผ่าน</h2>
+    รหัสผ่าน: <input type="password" id="password" placeholder="ใส่รหัสผ่าน">
+    <button onclick="checkPassword()">ตรวจสอบ</button>
+    <p id="passwordResult"></p>
+
+    <script>
+        function calculateBMI() {
+            let weight = parseFloat(document.getElementById("weight").value);
+            let height = parseFloat(document.getElementById("height").value);
+            if (weight > 0 && height > 0) {
+                let bmi = weight / (height ** 2);
+                document.getElementById("bmiResult").innerText = "BMI ของคุณคือ: " + bmi.toFixed(2);
+            } else {
+                document.getElementById("bmiResult").innerText = "กรุณาใส่ค่าน้ำหนักและส่วนสูงที่ถูกต้อง";
+            }
+        }
+
+        function greetUser() {
+            let name = document.getElementById("name").value;
+            let age = parseInt(document.getElementById("age").value);
+            let message = `Hello, ${name}! `;
+            
+            if (age < 12) {
+                message += "คุณเป็นเด็ก สนุกกับชีวิตนะ!";
+            } else if (age < 20) {
+                message += "คุณเป็นวัยรุ่น ใช้ชีวิตให้คุ้มค่า!";
+            } else if (age < 60) {
+                message += "คุณเป็นผู้ใหญ่ ทำงานหนักและดูแลตัวเอง!";
+            } else {
+                message += "คุณเป็นผู้สูงวัย มีความสุขกับชีวิตนะ!";
+            }
+            document.getElementById("greeting").innerText = message;
+        }
+
+        function checkPassword() {
+            let password = document.getElementById("password").value;
+            if (password.length > 8) {
+                document.getElementById("passwordResult").innerText = "รหัสผ่านใช้ได้";
+            } else {
+                document.getElementById("passwordResult").innerText = "รหัสผ่านต้องมากกว่า 8 ตัวอักษร";
+            }
+        }
+    </script>
+</body>
+</html>
 ```
 [รูปผลการทดลองที่ 2.4.1]
+![image](https://github.com/user-attachments/assets/ee9da82f-7a7d-46d7-945f-2681f8fd2aaa)
 
 
 
